@@ -13,7 +13,6 @@ RUN GOPROXY=https://goproxy.cn,direct go mod download
 COPY main.go main.go
 
 COPY collector/ collector/
-COPY example/ example/
 
 # Build
 RUN GOPROXY=https://goproxy.cn,direct CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o collector main.go
