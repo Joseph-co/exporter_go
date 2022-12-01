@@ -15,7 +15,6 @@ type Metrics struct {
 	metrics map[string]* prometheus.Desc
 	mutex sync.Mutex
 }
-
 func newGlobalMetric(namespace string, metricName string, docString string, labels []string) *prometheus.Desc {
 	return prometheus.NewDesc(namespace+"_"+metricName, docString, labels, nil)
 }
